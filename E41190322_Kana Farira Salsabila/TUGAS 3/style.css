@@ -1,0 +1,45 @@
+/*external css*/
+.header{
+    text-align: center; 
+    font-size: 40px; 
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    background-color: darkolivegreen;
+    padding: 30px; 
+    color: white;
+}
+
+.isi {
+    background-color: whitesmoke;
+    padding: 20px;
+    text-indent: 30px; 
+}
+
+.isijurusan{
+    font-size: 20px;
+    text-align: center;
+    padding: 10px;
+    color: white;
+    background-color: seagreen;
+}
+
+p{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 15px;
+}
+
+ol {
+    text-align: left;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 15px;
+    color: white;
+}
+
+
+.footer{
+    text-align: center; 
+    font-size: 20px; 
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; 
+    background-color: #333;
+    padding: 20px; 
+    color: white;
+}
