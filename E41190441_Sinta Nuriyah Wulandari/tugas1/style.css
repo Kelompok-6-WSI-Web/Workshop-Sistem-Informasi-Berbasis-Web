@@ -1,0 +1,37 @@
+h1{
+    color: blue;
+    font-family: sans-serif;
+    text-align: center;
+}
+
+h2{
+    color: coral;
+    font-family: sans-serif;
+    text-align: center;
+}
+
+.kotak{
+    padding: 50px;
+    width: 100px;
+    color:black;
+    margin: 10px;
+    background-color: darkkhaki;
+}
+
+#kotak{
+    padding: 100px;
+    width: 150px;
+    color: black;
+    margin: 20px;
+    background-color: blueviolet;
+}
+
+.main{
+    text-indent: 50px;
+    text-align: justify;
+    word-spacing: 10px;
+}
+
+body{
+    background-color: chartreuse;
+}
