@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FORM DATA KASIR</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <fieldset style="width:60%"> 
+    <center><h1>FORM DATA KASIR</h1></center>
+    <form action="target.html" method="POST" enctype="multipart/form-data">
+    <table border="0" cellspacing="10" width="800" align="center">
+        <tbody>
+            <tr>
+                <td>ID KASIR</td>
+                <td>:</td>
+                <td><input type="text" name="idkasir" placeholder="ID " id=""></td>
+            </tr>
+            <tr>
+                <td>NAMA KASIR</td>
+                <td>:</td>
+                <td><input type="text" name="namakasir" placeholder="NAMA" id=""></td>
+            </tr>
+            <tr>
+                <td>ALAMAT KASIR</td>
+                <td>:</td>
+                <td>
+                    <select name="" id="">
+                        <option value="jember">JEMBER</option>
+                        <option value="malang">MALANG</option>
+                        <option value="surabaya">SURABAYA</option>
+                        <option value="situbnondo">SITUBONDO</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>TELEPON KASIR</td>
+                <td>:</td>
+                <td><input type="text" name="teleponkasir" placeholder="Telp" id=""></td>
+            </tr>
+            <tr>
+                <td>STATUS</td>
+                <td>:</td>
+                <td><input type="radio" name="status" value="pria" id="">PRIA
+                <input type="radio" name="status" value="wanita" id="">WANITA</td>
+            </tr>
+            <tr>
+                <td>USERNAME</td>
+                <td>:</td>
+                <td><input type="text" name="username" placeholder="User Name" id=""></td>
+            </tr>
+            <tr>
+                <td>PASSWORD</td>
+                <td>:</td>
+                <td><input type="password" name="password" placeholder="*********" id=""></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+               <td><input type="submit" name="submit" value="KIRIM" id=""></td>
+            </tr>
+        </tbody>
+    </table>
+</form>
+    </fieldset>
+</body>
+</html>

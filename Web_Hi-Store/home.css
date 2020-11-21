@@ -1,0 +1,33 @@
+#mainnav {
+    background-color: #99B8A4;
+}
+.jumbotron {
+    background-image: url(img/banner.jpg);
+    background-size: cover;
+    height: 600px;
+    text-align: center;
+    margin-top: -120px;
+}
+.jumbotron .display-4 {
+    color: white;
+    margin-top: 200px;
+}
+.jumbotron p {
+    color: white;
+    font-size: 25px;
+}
+
+.jumbotron .btn {
+    background-color: #DDECE1;
+    border: none;
+    border-radius: 10px;
+    color: #1D3B23;
+}
+.media img {
+    background-size: contain;
+}
+
+.katalog img { 
+    height: 100px;
+    width: 100px;
+}
