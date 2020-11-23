@@ -1,0 +1,19 @@
+.katalog {
+    padding-top: 70px;
+}
+.katalog img { 
+
+    background-image: border;
+}
+.col-md-3 {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.col-md-3 .card {
+    background-color: #99B8A4;
+    color: black;
+}
+
+.col-md-3 .card .btn {
+    background-color: white;
+}
