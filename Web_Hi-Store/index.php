@@ -18,7 +18,7 @@
   <?php include('navbar.php'); ?>
 
     <div class="jumbotron">
-        <div class="container">
+        <div class="container" >
             <h1 class="display-4">SELAMAT DATANG <br> <span class="font-weight-bold"> HIDROPONIK STORE</span> </h1>
             <p class="lead">fresh from nature</p>
             <a class="btn btn-primary btn-lg" href="cart_admin.php" role="button">SHOP NOW</a>
@@ -41,8 +41,8 @@
             <div class="card" style="width: 18rem;">
             <img src="img/hidro.jpg" class="card-img-top" alt="img/hidro.jpg">
             </div>
-            <div class="hidro">
-            <h5 class="mt-0">Apa keunggulan metode hidroponik?</h5>
+            <div class="hidro mx-auto">
+            <h5 class="definisi mx-auto">Apa keunggulan metode hidroponik?</h5>
             Penggunaan lahan lebih efisien. <br>
             Tanaman berproduksi tanpa menggunakan tanah. <br>
             Kuantitas dan kualitas panen lebih fresh tanpa pestisida <br>

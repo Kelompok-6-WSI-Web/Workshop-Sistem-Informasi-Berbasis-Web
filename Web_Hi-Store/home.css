@@ -4,13 +4,13 @@
 .jumbotron {
     background-image: url(img/banner.jpg);
     background-size: cover;
-    height: 600px;
+    height: cover;
     text-align: center;
     margin-top: -120px;
 }
 .jumbotron .display-4 {
     color: white;
-    margin-top: 200px;
+    margin-top: 250px;
 }
 .jumbotron p {
     color: white;
