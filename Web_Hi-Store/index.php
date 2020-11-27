@@ -1,3 +1,7 @@
+<?php
+include 'koneksi.php';
+?>
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -20,7 +24,7 @@
         <div class="container" >
             <h1 class="display-4"> <span class="font-weight-bold">SELAMAT DATANG </br> HIDROPONIK STORE</span> </h1>
             <p class="lead">fresh from nature</p>
-            <a class="btn btn-primary btn-lg" href="#" role="button">SHOP NOW</a>
+            <a class="btn btn-primary btn-lg" href="cart_user.php" role="button">SHOP NOW</a>
         </div>
       </div>
       <div class="pengertian">

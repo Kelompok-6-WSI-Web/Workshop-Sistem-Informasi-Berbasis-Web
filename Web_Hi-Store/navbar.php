@@ -23,21 +23,22 @@
         <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav mx-auto">
             <li class="nav-item active">
-            <a class="nav-link js-scroll-trigger text-white ml-4" href="#home">HOME<span class="sr-only">(current)</span></a>
+            <a class="nav-link js-scroll-trigger text-white ml-4" href="index.php">HOME<span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-            <a class="nav-link js-scroll-trigger text-white ml-4" href="#shop">SHOP</a>
+            <a class="nav-link js-scroll-trigger text-white ml-4" href="cart_user.php">SHOP</a>
             </li>
             <li class="nav-item">
-            <a class="nav-link js-scroll-trigger text-white ml-4" href="#about">ABOUT</a>
+            <a class="nav-link js-scroll-trigger text-white ml-4" href="about.php">ABOUT</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link js-scroll-trigger text-white ml-4" href="#news">NEWS</a>
+                <a class="nav-link js-scroll-trigger text-white ml-4" href="news.php">NEWS</a>
             </li>
         </ul>
         <ul class="navbar-nav ml-auto">
             <li class="nav-item active">
-            <i class="fas fa-cart-plus text-white ml-3 mt-2"></i>
+            <a href="keranjang.php">
+            <i class="fas fa-cart-plus text-white ml-3 mt-2"></i></a>
             </li>
             <li class="nav-item">
             <i class="fas fa-user text-white ml-3 mt-2"></i>
