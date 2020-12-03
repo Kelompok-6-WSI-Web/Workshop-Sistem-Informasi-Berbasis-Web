@@ -36,11 +36,11 @@ include 'koneksi.php';
             hanya membutuhkan mineral dari tanah</p>
         </div>
       </div>
-
+      
     <div class="keunggulan">
       <div class="container">
         <img src="img/keunggulan.jpg" alt="" class="gambar"> 
-        Apa Keunggulan Metode Hidroponik?
+      Keunggulan menanam Hidroponik
         </div>
       </div>
     </div>
@@ -110,6 +110,9 @@ include 'koneksi.php';
         </h3>
       </div>
     </div>
+    <div class="footer">
+    <p align="center">Copyright @ Hi-Dev</p>
+   </div>
 
 
 
