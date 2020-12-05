@@ -30,6 +30,9 @@
             <a class="nav-link js-scroll-trigger text-white ml-4" href="cart_user.php">SHOP</a>
             </li>
             <li class="nav-item">
+            <a class="nav-link js-scroll-trigger text-white ml-4" href="edit.php">EDIT SHOP</a>
+            </li>
+            <li class="nav-item">
             <a class="nav-link js-scroll-trigger text-white ml-4" href="about.php">ABOUT</a>
             </li>
             <li class="nav-item">

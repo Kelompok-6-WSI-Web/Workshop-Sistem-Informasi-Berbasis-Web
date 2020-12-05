@@ -1,7 +1,3 @@
-<?php
-include 'koneksi.php';
-?>
-
 <!doctype html>
 <html lang="en">
   <head>
@@ -19,24 +15,26 @@ include 'koneksi.php';
     <title>Hi-Store</title>
   </head>
   <body id="page-top">
-  <?php include('navbar.php'); ?>
+   
+  <?php include('navbar_admin.php');?>
+  
       <div class="jumbotron">
+
         <div class="container" >
             <h1 class="display-4"> <span class="font-weight-bold">SELAMAT DATANG </br> HIDROPONIK STORE</span> </h1>
             <?php
-                if (isset($_GET['pesan'])){
-                            $pesan = $_GET['pesan'];
-                            if ($pesan == "berhasil") {
-                              ?>
-                              <div class="alert alert-success">
-                                <strong>Succes!</strong> Anda berhasil login.
-                              </div>
-                              <?php
-                            }
-                          }
-                ?>
+          if (isset($_GET['pesan'])){
+                    $pesan = $_GET['pesan'];
+                    if ($pesan == "berhasil") {
+                      ?>
+                      <div class="alert alert-success">
+                        <strong>Succes!</strong> Anda berhasil login.
+                      </div>
+                      <?php
+                    }
+                  }
+        ?>
             <p class="lead">fresh from nature</p>
-            
             <a class="btn btn-primary btn-lg" href="cart_user.php" role="button">SHOP NOW</a>
         </div>
       </div>
@@ -49,11 +47,12 @@ include 'koneksi.php';
             hanya membutuhkan mineral dari tanah</p>
         </div>
       </div>
-      
+
+
     <div class="keunggulan">
       <div class="container">
         <img src="img/keunggulan.jpg" alt="" class="gambar"> 
-      Keunggulan menanam Hidroponik
+        Apa Keunggulan Metode Hidroponik?
         </div>
       </div>
     </div>
@@ -123,9 +122,6 @@ include 'koneksi.php';
         </h3>
       </div>
     </div>
-    <div class="footer">
-    <p align="center">Copyright @ Hi-Dev</p>
-   </div>
 
 
 
