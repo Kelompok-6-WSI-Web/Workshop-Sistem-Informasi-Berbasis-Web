@@ -11,7 +11,7 @@
         if($password == $data['password']){
             if ($data['id_kategori'] == 1) {
 				
-				header("location:home_admin.php");
+				header("location:admin/home.php");
 			}elseif ($data['id_kategori'] == 2) {
 				
                 header("location:home_customer.php");
