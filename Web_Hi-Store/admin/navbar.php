@@ -51,9 +51,19 @@ $koneksi = new mysqli("localhost", "root","", "hi_store");
                     <li>
                         <a href="cart_user.php"><i class="fas fa-shopping-cart text-white ml-3 mt-3"></i></a>            
                     </li>
-                     <li>
-                         <i class="fas fa-user-circle text-white ml-3 mt-3" ></i>
-                     </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="fas fa-user text-white ml-3 mt-2"></i>
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    
+                            <a class="dropdown-item" href="login.php?halaman=signin">Sign In</a>
+                            <a class="dropdown-item" href="register.php?halaman=signup">Sign Up</a>
+                            <div class="dropdown-divider"></div>
+                            
+                            <a class="dropdown-item" href="logout.php?halaman=logout">Log Out</a>
+                        </div>
+                        </li>
                 </ul>
                
             </div>
@@ -94,6 +104,12 @@ $koneksi = new mysqli("localhost", "root","", "hi_store");
                     elseif($_GET['halaman']=="ubahproduk")
                     {
                         include 'ubahproduk.php';
+                    }elseif($_GET['halaman']=="signin")
+                    {
+                        include 'login.php';
+                    }elseif($_GET['halaman']=="logout")
+                    {
+                        include 'logout.php';
                     }
                     else 
                     {
