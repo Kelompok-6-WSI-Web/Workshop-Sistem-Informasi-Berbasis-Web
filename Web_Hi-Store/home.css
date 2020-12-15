@@ -48,6 +48,13 @@
     margin-top: 50px;
     margin-bottom: 50px;
 }
+.col-md-8 {
+    margin-top: 180px;
+    margin-bottom: 180px;
+    padding-top: 10px;
+    margin-left: -30px;
+    background-color:  #6a7b68;
+}
 .dijual {
     background: #6a7b68;
     padding-top: 15px;
@@ -68,8 +75,15 @@
     background-color: #99B8A4;
     color: black;
 }
-footer{
-    font-family: 'Libre Franklin', sans-serif;
-    background-color: grey;
-    color: white;
+.cool-link::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2;
+    background-color: #fff;
+    transition: width .3s
+}
+.cool-link:hover::after {
+    width: 100%;
+    transition: width .3s;
 }
