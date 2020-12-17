@@ -1,22 +1,25 @@
 #mainnav {
     background-color: #99B8A4;
 }
+#navbarNav{
+    font: bold;
+}
 .jumbotron {
     background-image: url(img/banner.jpg);
     background-size: cover;
-    height: 600px;
+    height: 790px;
     text-align: center;
     margin-top: -120px;
+    margin-bottom: 0px;
 }
 .jumbotron .display-4 {
     color: white;
-    margin-top: 200px;
+    margin-top: 250px;
 }
 .jumbotron p {
     color: white;
     font-size: 25px;
 }
-
 .jumbotron .btn {
     background-color: #DDECE1;
     border: none;
@@ -26,8 +29,61 @@
 .media img {
     background-size: contain;
 }
+.pengertian {
+    background: #dcece1;
+    padding-top: 20px;
+    margin-top: 0px;
+    text-align: center;
+    height: 200px;
+    padding-bottom: 20px;
 
-.katalog img { 
-    height: 100px;
-    width: 100px;
+}
+.pengertian .p {
+    font-size: 30px;
+}
+.gambar {
+    width: 330px;
+    height: 450px;
+    margin-left: 30px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+.col-md-8 {
+    margin-top: 180px;
+    margin-bottom: 180px;
+    padding-top: 10px;
+    margin-left: -30px;
+    background-color:  #6a7b68;
+}
+.dijual {
+    background: #6a7b68;
+    padding-top: 15px;
+    margin-top: 0px;
+    padding-bottom: 15px;
+}
+.katalog {
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+.col-md-3 {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.col-md-3 .card {
+    background-color: #99B8A4;
+    color: black;
+}
+.cool-link::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2;
+    background-color: #fff;
+    transition: width .3s
+}
+.cool-link:hover::after {
+    width: 100%;
+    transition: width .3s;
 }
