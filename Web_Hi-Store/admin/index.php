@@ -18,109 +18,57 @@ include 'koneksi.php';
     
 
     <title>Hi-Store</title>
+    <style>
+        #mainnav {
+            background-color: #99B8A4;
+        }
+    </style>
   </head>
   <body id="page-top">
-  <?php include('navbar.php'); ?>
-      <div class="jumbotron">
-        <div class="container" >
-            <h1 class="display-4"> <span class="font-weight-bold">SELAMAT DATANG </br> HIDROPONIK STORE</span> </h1>
-            <p class="lead">fresh from nature</p>
-            <a class="btn btn-primary btn-lg" href="cart_user.php" role="button">SHOP NOW</a>
-        </div>
-      </div>
-      <div class="pengertian">
-        <div class="container">
-          <h2>Apa itu Hidroponik?</h2>
-          <p class="lead">Hidroponik adalah sistem atau teknik budididaya tanaman yang </br>
-            meminimilisir penggunaan tanah. Pada prinsipnya tanaman </br>
-            sebenarnya tidak membutuhkan tanah untuk tumbuh, tanaman </br>
-            hanya membutuhkan mineral dari tanah</p>
-        </div>
-      </div>
+  <?php include('navbar_admin.php'); ?>
 
-    <div class="keunggulan">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-4">
-            <img src="img/keunggulan.jpg" alt="" class="gambar">
-          </div>
-          <div class="col-md-8">
-              <h5 class="card-title">Apa Keunggulan Metode Hidroponik?</h5>
-              <p class="card-text">Penggunaan lahan lebih efisien <br>
-              Tanaman berproduksi tanpa menggunakan tanah <br>
-              Kuantitas dan Kualitas panen lebih segar dan sehat tanpa pestisida <br>
-              Penggunaan pupuk dan air lebih efisien <br>
-              Pengendalian hama dan penyakit lebih mudah </p>
-          </div>
-        </div>
-      </div>
-    </div>
-    
-    <div class="dijual text-white">
-      <div class="container">
-          <center>
-            <h2>Apa saja yang dijual? </h2>
-          </center>
-      </div>
-    </div>
+        <!-- /. NAV SIDE  -->
+        <div id="page-wrapper" >
+            <div id="page-inner">
+                <?php
+                if (isset($_GET['halaman']))
+                {
+                    if($_GET['halaman']=="produk")
+                    {
+                        include'produk.php';
+                    }
+                    elseif($_GET['halaman']=="about")
+                    {
+                        include 'about.php';
+                    }
+                    elseif($_GET['halaman']=="news")
+                    {
+                        include 'news.php';
+                    }
+                    elseif($_GET['halaman']=="detail")
+                    {
+                        include 'detail.php';
+                    }
+                    elseif($_GET['halaman']=="tambahproduk")
+                    {
+                        include 'tambahproduk.php';
+                    }
+                    elseif($_GET['halaman']=="hapusproduk")
+                    {
+                        include 'hapusproduk.php';
+                    }
+                    elseif($_GET['halaman']=="ubahproduk")
+                    {
+                        include 'ubahproduk.php';
+                    }
+                    else 
+                    {
+                        include 'home.php';
+                    }
+                }
+                ?>
+            </div>     
 
-
-    <div class="container">
-      <div class="katalog">
-        <div class="row">
-          <div class="col-md-3">
-          <div class="card">
-            <img src="img/sayuran/bayam.png" class="card-img-top" alt="...">
-            <div class="card-body">
-              <center>
-              <h5 class="card-title">Bayam </h5>
-             </center>
-            </div>
-          </div>
-          </div>
-          <div class="col-md-3">
-            <div class="card">
-              <img src="img/sayuran/kangkung.png" class="card-img-top" alt="...">
-              <div class="card-body">
-                <center>
-                <h5 class="card-title">Kangkung</h5>
-                </center>
-              </div>
-            </div>
-            </div>
-            <div class="col-md-3">
-              <div class="card">
-                <img src="img/sayuran/pakcoy.png" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <center>
-                    <h5 class="card-title">Pakcoy</h5>
-                  </center>
-                </div>
-              </div>
-              </div>
-            <div class="col-md-3">
-             <div class="card">
-              <img src="img/sayuran/sawiputih.png" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <center>
-                  <h5 class="card-title">Sawi</h5>
-                  </center>
-                </div>
-              </div>
-            </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="pengertian">
-      <div class="container">
-        <h2>Visit Us</h2><br>
-        <h3>
-          <i class="fab fa-instagram ml-5"></i> @histore
-          <i class="fab fa-facebook ml-5"></i>histore
-        </h3>
-      </div>
-    </div>
 
 
 

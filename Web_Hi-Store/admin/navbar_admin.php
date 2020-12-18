@@ -23,16 +23,16 @@
         <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav mx-auto">
             <li class="nav-item active">
-            <a class="nav-link js-scroll-trigger text-white ml-4" href="index.php">HOME<span class="sr-only">(current)</span></a>
+            <a class="nav-link js-scroll-trigger text-white ml-4" href="home.php">HOME<span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-            <a class="nav-link js-scroll-trigger text-white ml-4" href="cart_user.php">PRODUCT</a>
+            <a class="nav-link js-scroll-trigger text-white ml-4" href="index.php?halaman=produk">PRODUCT</a>
             </li>
             <li class="nav-item">
-            <a class="nav-link js-scroll-trigger text-white ml-4" href="about.php">ABOUT</a>
+            <a class="nav-link js-scroll-trigger text-white ml-4" href="index.php?halaman=about">ABOUT</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link js-scroll-trigger text-white ml-4" href="news.php">NEWS</a>
+                <a class="nav-link js-scroll-trigger text-white ml-4" href="index.php?halaman=news">NEWS</a>
             </li>
         </ul>
         <ul class="navbar-nav ml-auto">
