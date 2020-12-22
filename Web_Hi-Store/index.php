@@ -111,16 +111,7 @@ include 'koneksi.php';
         </div>
       </div>
     </div>
-
-    <div class="pengertian">
-      <div class="container">
-        <h2>Visit Us</h2><br>
-        <h3>
-          <i class="fab fa-instagram ml-5"></i> @histore
-          <i class="fab fa-facebook ml-5"></i>histore
-        </h3>
-      </div>
-    </div>
+    <?php include('footer.php'); ?>
 
 
 
