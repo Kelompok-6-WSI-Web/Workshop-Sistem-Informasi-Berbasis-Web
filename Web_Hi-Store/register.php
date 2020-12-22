@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> SIGN UP </title>
     <style>
+        .form{
+          background-color: #6A7B67;
+          padding-bottom : 30px;          
+        }
         .box-register .btn {
             background-color: white;
             border: none;
@@ -32,14 +36,13 @@
 <?php include('navbar.php'); ?>
 
 <!-- konten -->
-<section class="konten">
+<div class="form">
     <div class="container">
     <br>
     <br>
     <br>
-        <h1> DAFTAR AKUN </h1>
+        <h1 class="text-white"> DAFTAR AKUN </h1>
         
-      
             <div class="box-register" >
                 <h4 class="text-white">Isi sesuai data diri anda</h4>
                 <br>
@@ -47,7 +50,6 @@
                 <form action="register_process.php" method="POST">
                     <div class="form-group">
                         <input type="email" class="form-control" name="email" placeholder="Alamat Email" required>
-                        <small id="emailHelp" class="form-text text-white">Kami akan menjaga keamanan email anda.</small>
                     </div>
                     <div class="form-group">
                         <input type="text" class="form-control" name="nama"  placeholder="Nama Lengkap" required>

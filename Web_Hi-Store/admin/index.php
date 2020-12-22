@@ -35,7 +35,7 @@ include 'koneksi.php';
                 {
                     if($_GET['halaman']=="produk")
                     {
-                        include'produk.php';
+                        include 'produk.php';
                     }
                     elseif($_GET['halaman']=="about")
                     {

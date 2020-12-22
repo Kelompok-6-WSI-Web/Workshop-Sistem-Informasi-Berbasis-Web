@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> SIGN IN </title>
     <style>
+        .form{
+          background-color: #6A7B67;
+          padding-bottom : 120px;          
+        }
         .box-login .btn {
             background-color: white;
             border: none;
@@ -32,10 +36,11 @@
 <?php include('navbar.php'); ?>
 
 <!-- konten -->
+<div class="form">
 
     <div class="container"><br><br><br>
 
-        <h1> SELAMAT DATANG </h1>
+        <h1 class="text-white"> SELAMAT DATANG </h1>
         <?php
         if (isset($_GET['pesan'])){
                     $pesan = $_GET['pesan'];
@@ -77,8 +82,7 @@
 
                     <div class="form-group">            
                         <input type="email" class="form-control form-control-user" name="email" placeholder="Alamat Email" required>
-                        <small id="emailHelp" class="form-text text-white">Kami akan menjaga keamanan email anda.</small>
-                    </div>
+                        </div>
                     <div class="form-group">
     
                         <input type="password" class="form-control form-control-user" name="password" placeholder="Password" required>
@@ -88,7 +92,7 @@
                     <small class="warning text-white">belum punya akun? silahkan klik <a href="register.php">daftar akun</a></small>
                 </form>
             </div>
-           
+            </div>           
         
 
 

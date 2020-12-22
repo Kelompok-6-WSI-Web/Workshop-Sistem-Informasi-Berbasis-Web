@@ -10,10 +10,10 @@
     if($email == $data['email']){
         if($password == $data['password']){
             if ($data['id_kategori'] == 1) {
-				
+				$_SESSION['user'] = "coba";
 				header("location:admin/home.php");
 			}elseif ($data['id_kategori'] == 2) {
-				
+				$_SESSION['user'] = "coba";
                 header("location:home_customer.php");
             }
     }else{

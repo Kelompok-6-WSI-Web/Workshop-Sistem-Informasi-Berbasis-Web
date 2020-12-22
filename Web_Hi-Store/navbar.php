@@ -45,13 +45,15 @@
               <i class="fas fa-user text-white ml-3 mt-2"></i>
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-        
+              <?php if(!isset($_SESSION['user'])){ ?>
                 <a class="dropdown-item" href="login.php">Sign In</a>
                 <a class="dropdown-item" href="register.php">Sign Up</a>
                 <div class="dropdown-divider"></div>
-                  
+                <?php }else{ ?>   
                 <a class="dropdown-item" href="logout.php">Log Out</a>
               </div>
+              <?php }?>
+            </li>
              
             </li>
         </ul>
