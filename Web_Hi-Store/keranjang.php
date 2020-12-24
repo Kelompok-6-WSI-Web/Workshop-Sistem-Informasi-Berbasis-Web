@@ -22,11 +22,11 @@ include 'koneksi.php';
 
 <!-- NAVBAR -->
 <?php include('navbar.php'); ?>
-<?php 
+<?php
 $id = $_SESSION['id'];
-$sql = mysqli_query($koneksi, "SELECT * FROM pembelian WHERE  id_user=$id");
-
+$sql = mysqli_query($koneksi, "SELECT * FROM pembelian WHERE id_user-$id");
 ?>
+
 <!-- konten -->
 <section class="konten">
     <div class="container">
@@ -35,6 +35,7 @@ $sql = mysqli_query($koneksi, "SELECT * FROM pembelian WHERE  id_user=$id");
     <br>
         <h1> KERANJANG BELANJA </h1>
         <br>
+        <form action="checkout.php" method="post">
         <table class="table table-bordered">
             <thead>
                 <tr>
@@ -53,7 +54,7 @@ $sql = mysqli_query($koneksi, "SELECT * FROM pembelian WHERE  id_user=$id");
         
         <!-- menampilkan produk -->
                 <?php
-                $ambil = $koneksi->query("select * from produk where id_produk = '$id_produk'"); 
+                $ambil = $koneksi->query("SELECT * FROM produk WHERE id_produk = '$id_produk'"); 
                 $pecah = $ambil->fetch_assoc();
                 $subharga = $pecah["harga_produk"]*$jumlah;
 
@@ -65,6 +66,7 @@ $sql = mysqli_query($koneksi, "SELECT * FROM pembelian WHERE  id_user=$id");
                 <tr>
                     <td> <?php  echo $nomor;?> </td>
                     <td><?php echo $pecah["nama_produk"]; ?></td>
+                    <input type="hidden" name="id_produk[]" value="<?php echo $pecah['id_produk'] ?>">
                     <td> Rp. <?php echo number_format($pecah["harga_produk"]); ?> </td>
                     <td> <?php echo $jumlah; ?> </td>
                     <td> Rp. <?php echo number_format($subharga); ?></td>
@@ -75,9 +77,10 @@ $sql = mysqli_query($koneksi, "SELECT * FROM pembelian WHERE  id_user=$id");
                 <?php endif ?> 
             </tbody>
         </table>
-
+        
         <a href="cart_user.php" class="btn btn-primary"> Lanjut belanja </a>
-        <a href="checkout.php" class="btn btn-primary"> Checkout </a>
+        <button class="btn btn-primary" name="submit">Checkout</button>
+                </form>
     </div>
 </section>
 
