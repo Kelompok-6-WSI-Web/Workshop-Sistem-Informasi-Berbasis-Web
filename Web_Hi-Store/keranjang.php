@@ -21,7 +21,11 @@ include 'koneksi.php';
 
 <!-- NAVBAR -->
 <?php include('navbar.php'); ?>
+<?php 
+$id = $_SESSION['id'];
+$sql = mysqli_query($koneksi, "SELECT * FROM pembelian WHERE  id_user=$id");
 
+?>
 <!-- konten -->
 <section class="konten">
     <div class="container">
