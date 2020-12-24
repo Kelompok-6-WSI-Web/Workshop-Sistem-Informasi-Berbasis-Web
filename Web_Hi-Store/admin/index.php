@@ -46,6 +46,14 @@ session_start();
                     {
                         include 'news.php';
                     }
+                    elseif($_GET['halaman']=="tambahberita")
+                    {
+                        include 'tambahberita.php';
+                    }
+                    elseif($_GET['halaman']=="hapusberita")
+                    {
+                        include 'hapusberita.php';
+                    }
                     elseif($_GET['halaman']=="detail")
                     {
                         include 'detail.php';
