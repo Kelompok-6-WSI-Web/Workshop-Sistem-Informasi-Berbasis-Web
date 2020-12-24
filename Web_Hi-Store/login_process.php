@@ -15,7 +15,7 @@
                 $_SESSION['id'] = $data['id_user'];
                 $_SESSION['email'] = $email;
                 $_SESSION['nama'] = $data['nama'];
-                $_SESSION['no_ho'] = $data['no_ho'];
+                $_SESSION['no_hp'] = $data['no_hp'];
                 $_SESSION['alamat'] = $data['alamat'];
                 $_SESSION['nama_kategori'] = "admin";
                 
@@ -26,7 +26,7 @@
                 $_SESSION['id'] = $data['id_user'];
                 $_SESSION['email'] = $email;
                 $_SESSION['nama'] = $data['nama'];
-                $_SESSION['no_ho'] = $data['no_ho'];
+                $_SESSION['no_hp'] = $data['no_hp'];
                 $_SESSION['alamat'] = $data['alamat'];
                 $_SESSION['nama_kategori'] = "customer";
                 header("location:home_customer.php");
