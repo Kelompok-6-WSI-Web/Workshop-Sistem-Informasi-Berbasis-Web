@@ -2,6 +2,7 @@
 session_start();
 
 include 'koneksi.php';
+
 ?>
 
 
@@ -47,6 +48,7 @@ $sql = mysqli_query($koneksi, "SELECT * FROM pembelian WHERE  id_user=$id");
             </thead>
             <tbody>
                 <?php $nomor=1; ?>
+                <?php if(isset($_SESSION['keranjang'])): ?>
                 <?php foreach ($_SESSION['keranjang'] as $id_produk => $jumlah): ?>
         
         <!-- menampilkan produk -->
@@ -70,6 +72,7 @@ $sql = mysqli_query($koneksi, "SELECT * FROM pembelian WHERE  id_user=$id");
                 </tr>
                 <?php $nomor++; ?>
                 <?php endforeach ?>
+                <?php endif ?> 
             </tbody>
         </table>
 
