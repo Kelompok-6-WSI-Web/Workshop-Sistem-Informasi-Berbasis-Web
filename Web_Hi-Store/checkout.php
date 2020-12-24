@@ -47,6 +47,7 @@ include 'koneksi.php';
             <tbody>
                 <?php $nomor=1; ?>
                 <?php $totalbelanja=0; ?>
+                <?php if(isset($_SESSION['keranjang'])): ?>
                 <?php foreach ($_SESSION['keranjang'] as $id_produk => $jumlah): ?>
         
         <!-- menampilkan produk -->
@@ -71,6 +72,7 @@ include 'koneksi.php';
                 <?php $nomor++; ?>
                 <?php $totalbelanja+=$subharga; ?>
                 <?php endforeach ?>
+                <?php endif ?>
             </tbody>
             <tfoot>
                 <tr>
@@ -85,14 +87,12 @@ include 'koneksi.php';
 <div class="row">
     <div class="col-md-4">
         <div class="fom-group">
-                    <input type="text" reandonly value="<?php echo $_SESSION["users"]
-                    ["nama"] ?>" class="form-control">
+                    <input type="text" reandonly value="<?php echo $_SESSION["nama"]?>" class="form-control">
         </div>
     </div>
     <div class="col-md-4">
         <div class="fom-group">
-                    <input type="text" reandonly value="<?php echo $_SESSION["users"]
-                    ["no_hp"] ?>" class="form-control">
+                    <input type="text" reandonly value="<?php echo $_SESSION["no_hp"] ?>" class="form-control">
         </div>
     </div>
             <div class="col-md-4">
@@ -169,7 +169,7 @@ include 'koneksi.php';
 
 <pre>
     <?php
-    print_r($_SESSION['users'])
+    print_r($_SESSION['nama'])
     ?>
 </pre>
 
