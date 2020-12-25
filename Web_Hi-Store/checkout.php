@@ -85,17 +85,22 @@ include 'koneksi.php';
 
 <form method="post">
 <div class="row">
-    <div class="col-md-4">
+    <div class="col-md-3">
         <div class="fom-group">
                     <input type="text" reandonly value="<?php echo $_SESSION["nama"]?>" class="form-control">
         </div>
     </div>
-    <div class="col-md-4">
+    <div class="col-md-3">
         <div class="fom-group">
                     <input type="text" reandonly value="<?php echo $_SESSION["no_hp"] ?>" class="form-control">
         </div>
     </div>
-            <div class="col-md-4">
+    <div class="col-md-3">
+        <div class="fom-group">
+                    <input type="text" reandonly value="<?php echo $_SESSION["alamat"] ?>" class="form-control">
+        </div>
+    </div>
+            <div class="col-md-3">
                     <select class="form-control" name="id_ongkir">
                         <option value="">Pilih Ongkos Kirim</option>
                         <?php
@@ -113,6 +118,7 @@ include 'koneksi.php';
                     </select>
             </div>
             </div>
+           
             <br>
             <button type="submit" name="checkout" class="btn btn-primary">Submit</button>
         </form>
@@ -141,8 +147,12 @@ include 'koneksi.php';
 
             foreach ($_SESSION["keranjang"] as $id_produk => $jumlah)
             {
-                $query = mysqli_query($koneksi, "INSERT INTO pembelian_produk (id_pembelian,id_produk,jumlah)
-                VALUES ('$id_pembelian_barusan','$id_produk','$jumlah') ");
+                //mendapatkan data produk berdasarkan id_produk
+                $query = mysqli_query($koneksi, "SELECT * FROM produk WHERE id_produk='$id_produk'");
+                $perproduk = $ambil->fetch_assoc();
+
+                $query = mysqli_query($koneksi, "INSERT INTO pembelian_produk
+                VALUES ('','$id_pembelian_barusan','$id_produk','$jumlah','$subharga') ");
                 if (!$query) {
                     # code...
                     echo mysqli_error($koneksi);
@@ -151,12 +161,8 @@ include 'koneksi.php';
             //mengosongkan keranjang belanja
 
             unset ($_SESSION["keranjang"]);
-
-
-            //tampilan dialihkan ke halaman nota, nota dari pembelian yang barusan
             echo "<script>alert('pembelian sukses'); </script>";
             echo "<script>location='nota.php?id=$id_pembelian_barusan'; </script>";
-
         }
         ?>
 
@@ -166,13 +172,13 @@ include 'koneksi.php';
 
 <pre>
     <?php
-    print_r($_SESSION['nama'])
+    //print_r($_SESSION['nama'])
     ?>
 </pre>
 
 <pre>
     <?php
-    print_r($_SESSION['keranjang'])
+    //print_r($_SESSION['keranjang'])
     ?>
 </pre>
 
