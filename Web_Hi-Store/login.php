@@ -56,6 +56,19 @@
                     }
                   }
         ?>
+        <?php
+              if (isset($_GET['pesan'])){
+                $pesan = $_GET['pesan'];
+                  if ($pesan == "belum_login") {
+                    ?>
+                    <div class="alert alert-danger">
+                      <strong>Danger!</strong> Anda harus login terlebih dahulu. <br>
+                      sebelum melakukan proses checkout
+                    </div>
+                    <?php
+                  }
+              }
+            ?>
             <div class="box-login" >
                 <h4 class="text-white">Silahkan Login</h4>
                 <br>

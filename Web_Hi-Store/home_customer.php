@@ -27,6 +27,18 @@ session_start();
         <div class="container" >
             <h1 class="display-4"> <span class="font-weight-bold">SELAMAT DATANG </br> HIDROPONIK STORE</span> </h1>
             <p class="lead">fresh from nature</p>
+            <?php
+              if (isset($_GET['pesan'])){
+                $pesan = $_GET['pesan'];
+                  if ($pesan == "login") {
+                    ?>
+                    <div class="alert alert-success">
+                      <strong>Succes!</strong> Anda berhasil login.
+                    </div>
+                    <?php
+                  }
+              }
+            ?>
             <a class="btn btn-primary btn-lg" href="cart_user.php" role="button">SHOP NOW</a>
         </div>
       </div>
