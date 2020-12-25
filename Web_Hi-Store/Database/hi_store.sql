@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.1
+-- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 25, 2020 at 01:44 AM
--- Server version: 10.4.11-MariaDB
--- PHP Version: 7.4.3
+-- Generation Time: Dec 25, 2020 at 10:07 AM
+-- Server version: 10.4.14-MariaDB
+-- PHP Version: 7.4.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -40,10 +39,8 @@ CREATE TABLE `berita` (
 --
 
 INSERT INTO `berita` (`id_news`, `judul_news`, `deskripsi_news`, `banner_news`) VALUES
-(1, 'SALEEEEE', 'bissmillah', ''),
-(2, 'eadasd', 'sadsad', ''),
-(3, 'asdasd', 'sadasd', ''),
-(4, 'fasdas', 'sdad', '');
+(1, 'SALEEEEE', 'bismillah', ''),
+(2, 'promo', 'alhamdulillah', '');
 
 -- --------------------------------------------------------
 
@@ -114,30 +111,63 @@ CREATE TABLE `pembelian` (
   `id_user` int(11) NOT NULL,
   `id_ongkir` int(11) NOT NULL,
   `tanggal_pembelian` date NOT NULL,
-  `total_pembelian` varchar(10) NOT NULL
+  `total_pembelian` varchar(10) NOT NULL,
+  `bukti` varchar(255) NOT NULL,
+  `status` varchar(20) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `pembelian`
 --
 
-INSERT INTO `pembelian` (`id_pembelian`, `id_user`, `id_ongkir`, `tanggal_pembelian`, `total_pembelian`) VALUES
-(1, 2, 1, '2020-12-04', '180000'),
-(2, 2, 2, '2020-12-16', '200000'),
-(3, 2, 0, '2020-12-24', '35000'),
-(4, 2, 1, '2020-12-24', '40000'),
-(5, 2, 2, '2020-12-24', '80000'),
-(6, 2, 1, '2020-12-24', '100000'),
-(7, 2, 1, '2020-12-24', '50000'),
-(8, 3, 1, '2020-12-24', '50000'),
-(9, 3, 1, '2020-12-24', '35000'),
-(10, 2, 1, '2020-12-24', '35000'),
-(11, 2, 1, '2020-12-24', '65000'),
-(12, 2, 1, '2020-12-24', '55000'),
-(13, 2, 1, '2020-12-24', '55000'),
-(14, 2, 1, '2020-12-24', '50000'),
-(15, 2, 1, '2020-12-24', '40000'),
-(16, 2, 1, '2020-12-24', '35000');
+INSERT INTO `pembelian` (`id_pembelian`, `id_user`, `id_ongkir`, `tanggal_pembelian`, `total_pembelian`, `bukti`, `status`) VALUES
+(1, 2, 1, '2020-12-04', '180000', 'polije.jpg', 'proses'),
+(2, 2, 2, '2020-12-16', '200000', '0', NULL),
+(3, 2, 0, '2020-12-24', '35000', '0', NULL),
+(4, 2, 1, '2020-12-24', '40000', '0', NULL),
+(5, 2, 2, '2020-12-24', '80000', '0', NULL),
+(6, 2, 1, '2020-12-24', '100000', '0', NULL),
+(7, 2, 1, '2020-12-24', '50000', '0', NULL),
+(8, 3, 1, '2020-12-24', '50000', '0', NULL),
+(9, 3, 1, '2020-12-24', '35000', '0', NULL),
+(10, 2, 1, '2020-12-24', '35000', '0', NULL),
+(11, 2, 1, '2020-12-24', '65000', '0', NULL),
+(12, 2, 1, '2020-12-24', '55000', '0', NULL),
+(13, 2, 1, '2020-12-24', '55000', '0', NULL),
+(14, 2, 1, '2020-12-24', '50000', '0', NULL),
+(15, 2, 1, '2020-12-24', '40000', '0', NULL),
+(16, 2, 1, '2020-12-24', '35000', '0', NULL),
+(17, 0, 0, '2020-12-24', '15000', '0', NULL),
+(18, 0, 1, '2020-12-24', '55000', '0', NULL),
+(19, 0, 1, '2020-12-24', '50000', '0', NULL),
+(20, 2, 1, '2020-12-24', '95000', '0', NULL),
+(21, 3, 1, '2020-12-24', '55000', '0', NULL),
+(22, 3, 1, '2020-12-24', '50000', '0', NULL),
+(23, 0, 1, '2020-12-24', '55000', '0', NULL),
+(24, 0, 1, '2020-12-24', '50000', '0', NULL),
+(25, 0, 1, '2020-12-24', '55000', '0', NULL),
+(26, 0, 1, '2020-12-24', '35000', '0', NULL),
+(27, 0, 1, '2020-12-25', '50000', '0', NULL),
+(28, 0, 1, '2020-12-25', '55000', '0', NULL),
+(29, 0, 1, '2020-12-25', '60000', '0', NULL),
+(30, 0, 2, '2020-12-25', '35000', '0', NULL),
+(31, 3, 1, '2020-12-25', '45000', '0', NULL),
+(32, 3, 1, '2020-12-25', '35000', '0', NULL),
+(33, 3, 2, '2020-12-25', '35000', '0', NULL),
+(34, 3, 1, '2020-12-25', '35000', '0', NULL),
+(35, 3, 1, '2020-12-25', '45000', '0', NULL),
+(36, 3, 1, '2020-12-25', '40000', '0', NULL),
+(37, 3, 1, '2020-12-25', '40000', '0', NULL),
+(38, 3, 1, '2020-12-25', '20000', '0', NULL),
+(39, 2, 2, '2020-12-25', '35000', 'images.jpg', 'proses'),
+(40, 2, 2, '2020-12-25', '35000', '0', NULL),
+(41, 2, 1, '2020-12-25', '40000', '0', NULL),
+(42, 2, 1, '2020-12-25', '50000', '0', NULL),
+(43, 2, 1, '2020-12-25', '50000', '0', NULL),
+(44, 2, 1, '2020-12-25', '65000', '0', NULL),
+(45, 2, 1, '2020-12-25', '60000', '0', NULL),
+(46, 2, 1, '2020-12-25', '115000', 'unnamed (2).jpg', 'proses'),
+(47, 5, 2, '2020-12-25', '35000', 'unnamed.jpg', 'proses');
 
 -- --------------------------------------------------------
 
@@ -149,39 +179,82 @@ CREATE TABLE `pembelian_produk` (
   `id_pembelian_produk` int(11) NOT NULL,
   `id_pembelian` int(11) NOT NULL,
   `id_produk` int(11) NOT NULL,
-  `jumlah` varchar(10) NOT NULL
+  `jumlah` varchar(10) NOT NULL,
+  `subharga` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `pembelian_produk`
 --
 
-INSERT INTO `pembelian_produk` (`id_pembelian_produk`, `id_pembelian`, `id_produk`, `jumlah`) VALUES
-(1, 1, 1, '10000'),
-(2, 2, 2, '30000'),
-(3, 5, 1, '2'),
-(4, 5, 6, '1'),
-(5, 5, 8, '1'),
-(6, 6, 1, '20000'),
-(7, 6, 6, '15000'),
-(8, 6, 8, '10000'),
-(9, 7, 1, '20000'),
-(10, 7, 8, '10000'),
-(11, 8, 1, '20000'),
-(12, 8, 8, '10000'),
-(13, 9, 6, '15000'),
-(14, 10, 6, '15000'),
-(15, 11, 8, '10000'),
-(16, 11, 6, '15000'),
-(17, 11, 1, '20000'),
-(18, 12, 1, '20000'),
-(19, 12, 6, '15000'),
-(20, 13, 1, '20000'),
-(21, 13, 6, '15000'),
-(22, 14, 1, '20000'),
-(23, 14, 8, '10000'),
-(24, 15, 1, '20000'),
-(25, 16, 6, '15000');
+INSERT INTO `pembelian_produk` (`id_pembelian_produk`, `id_pembelian`, `id_produk`, `jumlah`, `subharga`) VALUES
+(1, 1, 1, '10000', 0),
+(2, 2, 2, '30000', 0),
+(3, 5, 1, '2', 0),
+(4, 5, 6, '1', 0),
+(5, 5, 8, '1', 0),
+(6, 6, 1, '20000', 0),
+(7, 6, 6, '15000', 0),
+(8, 6, 8, '10000', 0),
+(9, 7, 1, '20000', 0),
+(10, 7, 8, '10000', 0),
+(11, 8, 1, '20000', 0),
+(12, 8, 8, '10000', 0),
+(13, 9, 6, '15000', 0),
+(14, 10, 6, '15000', 0),
+(15, 11, 8, '10000', 0),
+(16, 11, 6, '15000', 0),
+(17, 11, 1, '20000', 0),
+(18, 12, 1, '20000', 0),
+(19, 12, 6, '15000', 0),
+(20, 13, 1, '20000', 0),
+(21, 13, 6, '15000', 0),
+(22, 14, 1, '20000', 0),
+(23, 14, 8, '10000', 0),
+(24, 15, 1, '20000', 0),
+(25, 16, 6, '15000', 0),
+(26, 17, 6, '15000', 0),
+(27, 18, 1, '20000', 0),
+(28, 18, 6, '15000', 0),
+(29, 19, 1, '20000', 0),
+(30, 19, 8, '10000', 0),
+(31, 20, 1, '3', 0),
+(32, 20, 6, '1', 0),
+(33, 21, 6, '1', 0),
+(34, 21, 1, '1', 0),
+(35, 22, 1, '1', 0),
+(36, 22, 8, '1', 0),
+(37, 23, 1, '20000', 0),
+(38, 23, 6, '15000', 0),
+(39, 24, 1, '20000', 0),
+(40, 24, 8, '10000', 0),
+(41, 25, 1, '20000', 0),
+(42, 25, 6, '15000', 0),
+(43, 26, 6, '15000', 0),
+(44, 27, 1, '20000', 0),
+(45, 27, 8, '10000', 0),
+(46, 28, 6, '15000', 0),
+(47, 28, 1, '20000', 0),
+(48, 29, 1, '2', 0),
+(49, 30, 1, '1', 0),
+(50, 31, 6, '1', 0),
+(51, 31, 8, '1', 0),
+(52, 32, 6, '1', 0),
+(53, 39, 1, '1', 20000),
+(54, 40, 1, '1', 20000),
+(55, 41, 1, '1', 20000),
+(56, 42, 1, '1', 10000),
+(57, 42, 8, '1', 10000),
+(58, 43, 1, '1', 10000),
+(59, 43, 8, '1', 10000),
+(60, 44, 1, '1', 10000),
+(61, 44, 6, '1', 10000),
+(62, 44, 8, '1', 10000),
+(63, 45, 1, '2', 40000),
+(64, 46, 1, '2', 45000),
+(65, 46, 8, '1', 45000),
+(66, 46, 6, '3', 45000),
+(67, 47, 1, '1', 20000);
 
 -- --------------------------------------------------------
 
@@ -231,7 +304,9 @@ CREATE TABLE `users` (
 INSERT INTO `users` (`id_user`, `id_kategori`, `email`, `nama`, `no_hp`, `alamat`, `password`) VALUES
 (1, 1, 'mohamadhidayatullah@gmail.com', 'mohammad hidayatullah', '082301878744', 'Pamekarasa, Jawa Timur', '123'),
 (2, 2, 'rian@gmail.com', 'rian admojo', '082333344555', 'jalan jalan', '123'),
-(3, 2, 'yayang@gmail.com', 'Yayang', '087123456789', 'jalan2', '1234');
+(3, 2, 'yayang@gmail.com', 'Yayang', '087123456789', 'jalan2', '1234'),
+(4, 2, 'sintanur096@gmail.com', 'sinta nuriyah wulandari', '085235138387', 'Winongan Pasuruan', '12345'),
+(5, 2, 'aku@gmail.com', 'Sayang', '085436243098', 'Perum Mastrip Blok ZZ', '333');
 
 --
 -- Indexes for dumped tables
@@ -293,7 +368,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `berita`
 --
 ALTER TABLE `berita`
-  MODIFY `id_news` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_news` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `jenis`
@@ -317,13 +392,13 @@ ALTER TABLE `ongkir`
 -- AUTO_INCREMENT for table `pembelian`
 --
 ALTER TABLE `pembelian`
-  MODIFY `id_pembelian` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id_pembelian` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
 
 --
 -- AUTO_INCREMENT for table `pembelian_produk`
 --
 ALTER TABLE `pembelian_produk`
-  MODIFY `id_pembelian_produk` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `id_pembelian_produk` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=68;
 
 --
 -- AUTO_INCREMENT for table `produk`
@@ -335,7 +410,7 @@ ALTER TABLE `produk`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
