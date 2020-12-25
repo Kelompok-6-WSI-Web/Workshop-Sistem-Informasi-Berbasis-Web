@@ -32,12 +32,11 @@ include 'koneksi.php';
         <h1> DETAIL PEMBELIAN</h1>
         <?php
         $id = $_GET['id'];
-        $ambil = $koneksi->query("SELECT * FROM pembelian JOIN pelanggan
+        $ambil = $koneksi->query("SELECT * FROM pembelian JOIN users
             ON pembelian.id_user=users.id_user
-            WHERE pembelian.id_pembelian='$id'");
-        $detail = $ambil->fetch_assoc();
+            WHERE pembelian.id_pembelian=$id");
+        while($detail = mysqli_fetch_array($ambil)):
         ?>
-        <pre><?php print_r($detail); ?></pre>
 
         <strong><?php echo $detail['nama']; ?></strong> <br>
         <p>
@@ -46,7 +45,10 @@ include 'koneksi.php';
         </p>
         <p>
             Tanggal: <?php echo $detail['tanggal_pembelian']; ?> <br>
-            Total: <?php echo $detail['total_pembelian']; ?>
+            Total: <?php echo $detail['total_pembelian'];
+            $total = $detail['total_pembelian'];
+            endwhile;
+            ?>
         </p>
 
         <br>
@@ -63,57 +65,40 @@ include 'koneksi.php';
             </thead>
             <tbody>
                 <?php $nomor=1; ?>
-                <?php $totalbelanja=0; ?>
-                <?php foreach ($_SESSION['keranjang'] as $id_produk => $jumlah): ?>
-        
-        <!-- menampilkan produk -->
-                <?php
-                $ambil = $koneksi->query("select * from produk where id_produk = '$id_produk'"); 
-                $pecah = $ambil->fetch_assoc();
-                $subharga = $pecah["harga_produk"]*$jumlah;
-                
-
-                // echo "<pre>";
-                // print_r($pecah);
-                // echo "</pre>";  
-                ?>
+                <?php $ambil=$koneksi->query("SELECT * FROM pembelian_produk JOIN produk ON
+                pembelian_produk.id_produk=produk.id_produk
+                WHERE pembelian_produk.id_pembelian='$_GET[id]'"); ?>
+                <?php while ($pecah=$ambil->fetch_assoc()){ ?>
 
                 <tr>
                     <td> <?php  echo $nomor;?> </td>
                     <td><?php echo $pecah["nama_produk"]; ?></td>
-                    <td> Rp. <?php echo number_format($pecah["harga_produk"]); ?> </td>
-                    <td> <?php echo $jumlah; ?> </td>
-                    <td> Rp. <?php echo number_format($subharga); ?></td>
+                    <td><?php echo $pecah["harga_produk"]; ?></td>
+                    <td><?php echo $pecah["jumlah"]; ?></td>
+                    <td>
+                        <?php echo $pecah["harga_produk"]*$pecah['jumlah']; ?>
+                    </td>    
                 </tr>
-                <?php $nomor++; ?>
-                <?php $totalbelanja+=$subharga; ?>
-                <?php endforeach ?>
+                <?php 
+                $nomor++; 
+                    
+                ?>
+                <?php } ?>
             </tbody>
-            <tfoot>
-                <tr>
-                    <th colspan="4">Total Belanja</th>
-                    <th>Rp. <?php echo number_format($totalbelanja) ?> </th>
-                </tr>
-            </tfoot>
         </table>
 
+        <div class="row">
+            <div class="col-md-7">
+                <div class="alert alert-info">
+                    <p>
+                        Silahkan melakukan pembayaran Total Rp. <?php echo $total; ?>
+                        ke <br>
+                        <strong>BANK BNI 083-1833-787 AN. Sophia Rini</strong>
+                    </p>
+                </div>
+            </div>
         </div>
-    </div>
-</section>
-
-<?php 
-        if (isset($_POST["checkout"]))
-        {
-            $id_user = $_SESSION["users"]["id_user"];
-            $id_ongkir = $_POST["id_ongkir"];
-            $tanggal_pembelian = date("Y-m-d");
-
-        }
-
-    ?>
-
+            
 </body>
 </html>
 
-
-    
