@@ -70,6 +70,10 @@ session_start();
                     {
                         include 'ubahproduk.php';
                     }
+                    elseif($_GET['halaman']=="laporan")
+                    {
+                        include 'laporan.php';
+                    }
                     else 
                     {
                         include 'home.php';

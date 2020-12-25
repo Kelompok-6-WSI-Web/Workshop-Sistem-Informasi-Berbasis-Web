@@ -1,6 +1,9 @@
 <?php
-    session_start();
+include 'koneksi.php';
+session_start();
+
 ?>
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -11,6 +14,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="news.css">
     <script src="https://kit.fontawesome.com/c44947b450.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="fontawesome-free/css/all.min.css">
     
@@ -18,25 +22,10 @@
     <title>Hi-Store</title>
   </head>
   <body id="page-top">
-   
-  <?php include('navbar.php');?>
-  
+  <?php include('navbar.php'); ?>
       <div class="jumbotron">
-
         <div class="container" >
             <h1 class="display-4"> <span class="font-weight-bold">SELAMAT DATANG </br> HIDROPONIK STORE</span> </h1>
-            <?php
-          if (isset($_GET['pesan'])){
-                    $pesan = $_GET['pesan'];
-                    if ($pesan == "berhasil") {
-                      ?>
-                      <div class="alert alert-success">
-                        <strong>Succes!</strong> Anda berhasil login.
-                      </div>
-                      <?php
-                    }
-                  }
-        ?>
             <p class="lead">fresh from nature</p>
             <a class="btn btn-primary btn-lg" href="cart_user.php" role="button">SHOP NOW</a>
         </div>
@@ -51,11 +40,20 @@
         </div>
       </div>
 
-
     <div class="keunggulan">
       <div class="container">
-        <img src="img/keunggulan.jpg" alt="" class="gambar"> 
-        Apa Keunggulan Metode Hidroponik?
+        <div class="row">
+          <div class="col-md-4">
+            <img src="img/keunggulan.jpg" alt="" class="gambar">
+          </div>
+          <div class="col-md-8">
+              <h5 class="card-title">Apa Keunggulan Metode Hidroponik?</h5>
+              <p class="card-text">Penggunaan lahan lebih efisien <br>
+              Tanaman berproduksi tanpa menggunakan tanah <br>
+              Kuantitas dan Kualitas panen lebih segar dan sehat tanpa pestisida <br>
+              Penggunaan pupuk dan air lebih efisien <br>
+              Pengendalian hama dan penyakit lebih mudah </p>
+          </div>
         </div>
       </div>
     </div>
@@ -115,16 +113,7 @@
         </div>
       </div>
     </div>
-
-    <div class="pengertian">
-      <div class="container">
-        <h2>Visit Us</h2><br>
-        <h3>
-          <i class="fab fa-instagram ml-5"></i> @histore
-          <i class="fab fa-facebook ml-5"></i>histore
-        </h3>
-      </div>
-    </div>
+    <?php include('footer.php'); ?>
 
 
 

@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> SIGN IN </title>
     <style>
+        h1{
+          text-align: center;
+        }
         .form{
           background-color: #6A7B67;
           padding-bottom : 120px;          

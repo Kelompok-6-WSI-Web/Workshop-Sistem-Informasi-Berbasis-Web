@@ -34,12 +34,11 @@
             <li class="nav-item">
                 <a class="nav-link js-scroll-trigger text-white ml-4" href="index.php?halaman=news">NEWS</a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link js-scroll-trigger text-white ml-4" href="index.php?halaman=laporan">LAPORAN</a>
+            </li>
         </ul>
         <ul class="navbar-nav ml-auto">
-            <li class="nav-item active">
-            <a href="keranjang.php">
-            <i class="fas fa-cart-plus text-white ml-3 mt-3"></i></a>
-            </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               <i class="fas fa-user text-white ml-3 mt-2"></i>
