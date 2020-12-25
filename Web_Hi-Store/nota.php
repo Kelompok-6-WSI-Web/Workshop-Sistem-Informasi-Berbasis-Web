@@ -32,6 +32,7 @@ include 'koneksi.php';
         <h1> DETAIL PEMBELIAN</h1>
         <?php
         $id = $_GET['id'];
+        $total = null ;
         $ambil = $koneksi->query("SELECT * FROM pembelian JOIN users
             ON pembelian.id_user=users.id_user
             WHERE pembelian.id_pembelian=$id");

@@ -122,7 +122,7 @@ include 'koneksi.php';
         <?php 
         if (isset($_POST["checkout"]))
         {
-            $id_user = $_SESSION["users"]["id_user"];
+            $id_user = $_SESSION["id"];
             $id_ongkir = $_POST["id_ongkir"];
             $tanggal_pembelian = date("Y-m-d");
 
@@ -141,11 +141,8 @@ include 'koneksi.php';
 
             foreach ($_SESSION["keranjang"] as $id_produk => $jumlah)
             {
-                $query_produk = mysqli_query($koneksi,"SELECT harga_produk FROM produk WHERE id_produk= '$id_produk'");
-                $array = mysqli_fetch_array($query_produk);
-                $harga = $array['harga_produk'];
                 $query = mysqli_query($koneksi, "INSERT INTO pembelian_produk (id_pembelian,id_produk,jumlah)
-                VALUES ('$id_pembelian_barusan','$id_produk','$harga') ");
+                VALUES ('$id_pembelian_barusan','$id_produk','$jumlah') ");
                 if (!$query) {
                     # code...
                     echo mysqli_error($koneksi);
