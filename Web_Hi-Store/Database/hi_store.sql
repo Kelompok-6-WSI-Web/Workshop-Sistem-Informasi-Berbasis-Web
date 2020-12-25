@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.2
+-- version 5.0.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 24, 2020 at 07:51 AM
--- Server version: 10.4.14-MariaDB
--- PHP Version: 7.4.10
+-- Generation Time: Dec 25, 2020 at 01:44 AM
+-- Server version: 10.4.11-MariaDB
+-- PHP Version: 7.4.3
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -20,6 +21,29 @@ SET time_zone = "+00:00";
 --
 -- Database: `hi_store`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `berita`
+--
+
+CREATE TABLE `berita` (
+  `id_news` int(5) NOT NULL,
+  `judul_news` varchar(50) NOT NULL,
+  `deskripsi_news` text NOT NULL,
+  `banner_news` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `berita`
+--
+
+INSERT INTO `berita` (`id_news`, `judul_news`, `deskripsi_news`, `banner_news`) VALUES
+(1, 'SALEEEEE', 'bissmillah', ''),
+(2, 'eadasd', 'sadsad', ''),
+(3, 'asdasd', 'sadasd', ''),
+(4, 'fasdas', 'sdad', '');
 
 -- --------------------------------------------------------
 
@@ -214,6 +238,12 @@ INSERT INTO `users` (`id_user`, `id_kategori`, `email`, `nama`, `no_hp`, `alamat
 --
 
 --
+-- Indexes for table `berita`
+--
+ALTER TABLE `berita`
+  ADD PRIMARY KEY (`id_news`);
+
+--
 -- Indexes for table `jenis`
 --
 ALTER TABLE `jenis`
@@ -258,6 +288,12 @@ ALTER TABLE `users`
 --
 -- AUTO_INCREMENT for dumped tables
 --
+
+--
+-- AUTO_INCREMENT for table `berita`
+--
+ALTER TABLE `berita`
+  MODIFY `id_news` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `jenis`
