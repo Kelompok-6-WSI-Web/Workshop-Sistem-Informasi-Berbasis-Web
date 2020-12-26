@@ -1,8 +1,8 @@
 <br>
 <br>
 <br>
-<br>
 
+<div class="container">
 <h2>
     HALAMAN PRODUK ADMIN
 </h2>
@@ -31,12 +31,13 @@
                     <img src="../foto_produk/<?php echo $pecah['foto_produk']; ?>" width="100">
             </td>
             <td>  
-                 <a href="index.php?halaman=hapusproduk&id=<?php echo $pecah['id_produk']; ?>" class="btn-danger btn"> hapus </a>
-                 <a href="index.php?halaman=ubahproduk&id=<?php echo $pecah['id_produk']; ?>" class="btn btn-warning"> ubah </a>
+                 <a href="index.php?halaman=hapusproduk&id=<?php echo $pecah['id_produk']; ?>" class="btn-danger btn"> HAPUS </a>
+                 <a href="index.php?halaman=ubahproduk&id=<?php echo $pecah['id_produk']; ?>" class="btn btn-warning"> UBAH </a>
             </td>
         </tr>
         <?php $nomor++; ?>
          <?php } ?>
     </tbody>   
 </table>
-<a href="index.php?halaman=tambahproduk" class="btn-primary btn"> tambah produk </a>
+<a href="index.php?halaman=tambahproduk" class="btn-primary btn">TAMBAH PRODUK</a>
+</div>
