@@ -1,5 +1,6 @@
 <?php
 include 'koneksi.php';
+session_start();
 ?>
 
 <!doctype html>
@@ -23,27 +24,23 @@ include 'koneksi.php';
   <?php include('navbar.php'); ?>
     <div class="container">
         <div class="berita">
+
+          
+        <?php $ambil = $koneksi->query("select * from berita"); ?>
+        <?php while ($perberita = $ambil->fetch_assoc()) { ?>
+          
           <div class="card mb-3">
-              <img class="card-img-top" src="img/news/banner1.jpg" alt="Card image cap">
+              <img class="card-img-top" src="banner/<?php echo $perberita['banner_news'];?> " alt="Card image cap">
               <div class="card-body">
-                  <h5 class="card-title">SALE HARI NATAL </h5>
-                  <p class="card-text">Dalam rangka memperingati Hari Raya Natal dan Akhir Tahun Hi-Store mengadakan sale besar-besaran sampai 50% untuk semua jenis sayuran 
-                  yang ada di halaman shop. Sale dimulai dari tanggal 25 Desember- 02 Januari 2021 yuk buruan diborong jangan sampai kehabisan yahh !</p>
+                  <h5 class="card-title"><?php echo $perberita['judul_news'];?></h5>
+                  <p class="card-text"><?php echo $perberita['deskripsi_news'];?></p>
                   <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
               </div>
           </div>
-          <div class="card mb-3">
-              <img class="card-img-top" src="img/news/banner2.jpg" alt="Card image cap">
-              <div class="card-body">
-                  <h5 class="card-title">HIDROPONIK 100% ORGANIK </h5>
-                  <p class="card-text">Sayur hidroponik merupakan 
-                  sayuran sehat yang tidak ditanam di tanah. Alih-alih menggunakan tanah, 
-                  air mineral digunakan sebagai media tanam. Makanya, tanaman sayur hidroponik bisa ditanam 
-                  di area yang sempit sekalipun. Sayuran hidroponik juga biasanya lebih aman dari s
-                  erangan hama sehingga bebas pestisida.</p>
-                  <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-              </div>
-          </div>
+          <?php }?>
+
+
+
         </div>
     </div>
     
