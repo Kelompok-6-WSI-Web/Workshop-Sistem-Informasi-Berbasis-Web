@@ -3,7 +3,7 @@
 <br>
 <br>
 
-
+<div class="container">
 <h2>
 HALAMAN UBAH PRODUK </h2>
 
@@ -66,7 +66,8 @@ if (isset($_POST['ubah']))
         harga_produk ='$_POST[harga]', berat_produk='$_POST[berat]',
         deskripsi_produk='$_POST[deskripsi]' where id_produk='$_GET[id]'"); 
     }
-    echo  "<script> alert('data produk telah dirubah'); </script>";
+    echo  "<script> alert('Data Produk Telah Dirubah'); </script>";
     echo "<script> location='index.php?halaman=produk'; </script>";
 }
 ?>
+</div>

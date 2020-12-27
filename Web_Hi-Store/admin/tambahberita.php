@@ -26,13 +26,13 @@
 <?php
 if (isset($_POST['save']))
 {
-    $judul = $_FILES['banner_news']['name'];
-    $lokasi= $_FILES['judul']['tmp_name'];
-    move_uploaded_file($lokasi, "../banner_news/".$judul);
+    $judul = $_FILES['banner']['name'];
+    $lokasi= $_FILES['banner']['tmp_name'];
+    move_uploaded_file($lokasi, "../banner/".$judul);
     $koneksi->query("insert into berita (judul_news, deskripsi_news, banner_news)
     values('$_POST[judul]', '$_POST[deskripsi]', '$judul')");
 
-    echo "<div class='alert alert=info'> Data tersimpan </div>";
+    echo "<div class='alert alert=info'> Data Tersimpan </div>";
     echo "<meta http-equiv='refresh' content='1;url=index.php?halaman=news'>";
 }
 ?>

@@ -54,6 +54,10 @@ session_start();
                     {
                         include 'hapusberita.php';
                     }
+                    elseif($_GET['halaman']=="ubahberita")
+                    {
+                        include 'ubahberita.php';
+                    }
                     elseif($_GET['halaman']=="detail")
                     {
                         include 'detail.php';

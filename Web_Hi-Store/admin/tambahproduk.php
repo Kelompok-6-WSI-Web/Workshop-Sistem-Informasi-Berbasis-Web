@@ -3,7 +3,7 @@
 <br>
 <br>
 
-
+<div class="container">
 <h2> TAMBAH PRODUK </h2>
 
 <form method="post" enctype="multipart/form-data">
@@ -44,3 +44,4 @@ if (isset($_POST['save']))
     echo "<meta http-equiv='refresh' content='1;url=index.php?halaman=produk'>";
 }
 ?>
+</div>
