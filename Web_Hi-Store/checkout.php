@@ -145,8 +145,7 @@ include "koneksi.php"
             $total_pembelian = $totalbelanja + $tarif;
 
             //menyimpan data ke tabel pembelian
-            $query = mysqli_query($koneksi, "INSERT INTO pembelian (id_user, id_ongkir,tanggal_pembelian,total_pembelian)
-            VALUES ('$id_user','$id_ongkir','$tanggal_pembelian','$total_pembelian')");
+            $query = mysqli_query($koneksi, "INSERT INTO pembelian (id_user, id_ongkir,tanggal_pembelian,total_pembelian) VALUES ('$id_user','$id_ongkir','$tanggal_pembelian','$total_pembelian')");
 
             //mendapatkan id_pembelian barusan terjadi
             $id_pembelian_barusan = $koneksi->insert_id;
@@ -155,10 +154,10 @@ include "koneksi.php"
             {
                 //mendapatkan data produk berdasarkan id_produk
                 $query = mysqli_query($koneksi, "SELECT * FROM produk WHERE id_produk='$id_produk'");
-                $perproduk = $ambil->fetch_assoc();
-
+                $perproduk = $query->fetch_assoc();
+                $hargasub = $perproduk['harga_produk']*$jumlah;
                 $query = mysqli_query($koneksi, "INSERT INTO pembelian_produk
-                VALUES ('','$id_pembelian_barusan','$id_produk','$jumlah','$subharga') ");
+                VALUES ('','$id_pembelian_barusan','$id_produk','$jumlah','$hargasub') ");
                 if (!$query) {
                     # code...
                     echo mysqli_error($koneksi);

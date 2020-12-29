@@ -70,6 +70,8 @@ include 'koneksi.php';
                 <?php $ambil=$koneksi->query("SELECT * FROM pembelian_produk INNER JOIN produk ON pembelian_produk.id_produk=produk.id_produk
                 WHERE id_pembelian='$_GET[id]'"); ?>
                 <?php while ($pecah=$ambil->fetch_assoc()){ ?>
+                
+
                 <tr>
                     <td> <?php  echo $nomor;?> </td>
                     <td><?php echo $pecah["nama_produk"]; ?></td>
