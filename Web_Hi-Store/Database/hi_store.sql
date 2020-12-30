@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.2
+-- version 5.0.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 25, 2020 at 10:07 AM
--- Server version: 10.4.14-MariaDB
--- PHP Version: 7.4.10
+-- Generation Time: Dec 30, 2020 at 01:18 PM
+-- Server version: 10.4.11-MariaDB
+-- PHP Version: 7.4.3
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -39,8 +40,8 @@ CREATE TABLE `berita` (
 --
 
 INSERT INTO `berita` (`id_news`, `judul_news`, `deskripsi_news`, `banner_news`) VALUES
-(1, 'SALEEEEE', 'bismillah', ''),
-(2, 'promo', 'alhamdulillah', '');
+(4, 'SALE HARI NATAL ', 'Dalam rangka memperingati Hari Raya Natal dan Akhir Tahun Hi-Store mengadakan sale besar-besaran sampai 50% untuk semua jenis sayuran yang ada di halaman shop. Sale dimulai dari tanggal 25 Desember- 02 Januari 2021 yuk buruan diborong jangan sampai kehabisan yahh !', 'banner1.jpg'),
+(5, 'HIDROPONIK 100% ORGANIK ', 'Sayur hidroponik merupakan sayuran sehat yang tidak ditanam di tanah. Alih-alih menggunakan tanah, air mineral digunakan sebagai media tanam. Makanya, tanaman sayur hidroponik bisa ditanam di area yang sempit sekalipun. Sayuran hidroponik juga biasanya lebih aman dari s erangan hama sehingga bebas pestisida.', 'banner2.jpg');
 
 -- --------------------------------------------------------
 
@@ -277,9 +278,10 @@ CREATE TABLE `produk` (
 --
 
 INSERT INTO `produk` (`id_produk`, `id_jenis`, `nama_produk`, `harga_produk`, `berat_produk`, `foto_produk`, `deskripsi_produk`) VALUES
-(1, 2, 'Selada', '20000', '500', 'selada.jpg', '        Sayur selada murah dan berkualitas baik        '),
-(6, 0, 'Sawi', '15000', '1000', 'Sawi.jpg', 'sayur sawi murah'),
-(8, 0, 'Daun Bawang', '10000', '1000', 'daun bawang.jpg', 'Daun bawang segar');
+(9, 0, 'Sawi', '10000', '100', 'sawi.jpg', 'Sawi Segar Fresh dari kebun hidroponik'),
+(10, 0, 'Pakcoy', '12000', '100', 'pakcoy.jpg', 'Sawi pakcoy khusus buat sayur cop, capjay dan lain-lain'),
+(11, 0, 'Kangkung', '10000', '100', 'kangkung.jpg', 'Kangkung fresh dari kebun'),
+(12, 0, 'Bayam', '15000', '100', 'bayam.jpg', 'Bayam Mantapp');
 
 -- --------------------------------------------------------
 
@@ -368,7 +370,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `berita`
 --
 ALTER TABLE `berita`
-  MODIFY `id_news` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_news` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `jenis`
@@ -404,7 +406,7 @@ ALTER TABLE `pembelian_produk`
 -- AUTO_INCREMENT for table `produk`
 --
 ALTER TABLE `produk`
-  MODIFY `id_produk` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id_produk` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `users`
