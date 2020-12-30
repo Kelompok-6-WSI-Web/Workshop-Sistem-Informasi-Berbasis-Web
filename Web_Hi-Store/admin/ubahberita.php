@@ -56,7 +56,8 @@ if (isset($_POST['ubah']))
         $koneksi->query("update berita set judul_news='$judul',
         deskripsi_news='$deskripsi' where id_news=$id");
     }
-    echo $koneksi->error;
+    echo  "<script> alert('Data Berita Telah Dirubah'); </script>";
+    echo "<script> location='index.php?halaman=berita'; </script>";
 }
 ?>
 </div>
