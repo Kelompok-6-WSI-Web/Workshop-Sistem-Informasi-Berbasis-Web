@@ -13,7 +13,7 @@
     margin-bottom: 0px;
 }
 .jumbotron .display-4 {
-    color: white;
+    color: rgb(32, 32, 32);
     margin-top: 250px;
 }
 .jumbotron p {
@@ -86,4 +86,20 @@
 .cool-link:hover::after {
     width: 100%;
     transition: width .3s;
+}
+.profil {
+    margin-top: 60px;
+    background-color:  #6a7b68;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+.teamm {
+    margin-top: 10px;
+    background-color:  #6a7b68;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+.team {
+    padding-top: 15px;
+    padding-bottom: 15px;
 }

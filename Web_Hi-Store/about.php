@@ -20,7 +20,7 @@ include 'koneksi.php';
   </head>
   <body id="page-top">
   <?php include('navbar.php'); ?>
-  <div class="dijual text-white">
+  <div class="profil text-white">
           <center>
             <h2>Profile Product Owner</h2>
           </center>
@@ -42,7 +42,7 @@ include 'koneksi.php';
         </div>
       </div>
     </div>
-  <div class="dijual text-white">
+  <div class="teamm text-white">
           <center>
             <h2>Team </h2>
           </center>
