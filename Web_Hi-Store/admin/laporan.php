@@ -50,6 +50,7 @@ if (isset($_POST["kirim"]))
     </div>
 </form>
 
+<div class="container">
 <table class="table table-bordered">
     <thead>
         <tr>
@@ -81,3 +82,4 @@ if (isset($_POST["kirim"]))
         </tr>
     </tfoot>
 </table>
+</div>
