@@ -29,7 +29,7 @@
             <a class="nav-link js-scroll-trigger text-white ml-4" href="index.php?halaman=produk">PRODUCT</a>
             </li>
             <li class="nav-item">
-            <a class="nav-link js-scroll-trigger text-white ml-4" href="index.php?halaman=about">ABOUT</a>
+            <a class="nav-link js-scroll-trigger text-white ml-4" href="index.php?halaman=struk">STRUK</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link js-scroll-trigger text-white ml-4" href="index.php?halaman=news">NEWS</a>

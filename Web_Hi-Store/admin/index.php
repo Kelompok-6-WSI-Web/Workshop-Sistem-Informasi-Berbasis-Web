@@ -38,9 +38,9 @@ session_start();
                     {
                         include 'produk.php';
                     }
-                    elseif($_GET['halaman']=="about")
+                    elseif($_GET['halaman']=="struk")
                     {
-                        include 'about.php';
+                        include 'struk.php';
                     }
                     elseif($_GET['halaman']=="news")
                     {
