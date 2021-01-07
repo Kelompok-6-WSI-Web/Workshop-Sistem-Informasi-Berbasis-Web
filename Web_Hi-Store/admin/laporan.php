@@ -2,16 +2,17 @@
 $semuadata=array();
 $tgl_mulai = "-";
 $tgl_selesai = "-";
+$BOOL = false;
 if (isset($_POST["kirim"]))
 {
     $tgl_mulai = $_POST["tglm"];
     $tgl_selesai = $_POST["tgls"];
     $ambil = $koneksi->query("SELECT * FROM pembelian pm LEFT JOIN users us ON pm.id_user=us.id_user
         WHERE tanggal_pembelian BETWEEN '$tgl_mulai' AND '$tgl_selesai' ");
-    while($pecah = $ambil->fetch_assoc())
-    {
-        $semuadata[]=$pecah;
-    }
+   if($ambil){
+    $pecah = $ambil->fetch_assoc();
+    $BOOL = true;
+   }
     //echo "<pre>";
     //print_r($semuadata);
     //echo "</pre>";
@@ -62,8 +63,11 @@ if (isset($_POST["kirim"]))
         </tr>
     </thead>
     <tbody>
+        <?php 
+        if($BOOL == true){
+        ?>
         <?php $total=0; ?>
-        <?php foreach ($semuadata as $key => $value ); ?>
+        <?php foreach ($ambil as $key => $value ): ?>
         <?php $total+=$value['total_pembelian'] ?>
         <tr>
             <td><?php echo $key+1; ?></td>
@@ -72,7 +76,7 @@ if (isset($_POST["kirim"]))
             <td><?php echo number_format ($value["total_pembelian"]) ?></td>
             <td><?php echo $value["status"] ?></td>
         </tr>
-        
+        <?php endforeach ?>
     </tbody>
     <tfoot>
         <tr>
@@ -81,5 +85,6 @@ if (isset($_POST["kirim"]))
             <th></th>
         </tr>
     </tfoot>
+    <?php } ?>
 </table>
 </div>
