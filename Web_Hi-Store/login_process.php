@@ -11,8 +11,7 @@
         if($password == $data['password']){
             if ($data['id_kategori'] == 1) {
                 $_SESSION['user'] = "coba";
-
-                
+                $_SESSION['status'] = "login";
                 $_SESSION['id'] = $data['id_user'];
                 $_SESSION['email'] = $email;
                 $_SESSION['nama'] = $data['nama'];

@@ -1,8 +1,12 @@
 <?php
 include 'koneksi.php';
 session_start();
-?>
+if ($_SESSION['status'] != "login"){
+  header("location:../login.php?pesan=belum_login1");
 
+}
+include "koneksi.php"
+?>
 <!doctype html>
 <html lang="en">
   <head>
