@@ -8,7 +8,7 @@ if (isset($_POST["kirim"]))
     $tgl_mulai = $_POST["tglm"];
     $tgl_selesai = $_POST["tgls"];
     $ambil = $koneksi->query("SELECT * FROM pembelian pm LEFT JOIN users us ON pm.id_user=us.id_user
-        WHERE tanggal_pembelian BETWEEN '$tgl_mulai' AND '$tgl_selesai' ");
+        WHERE tanggal_pembelian BETWEEN '$tgl_mulai' AND '$tgl_selesai' AND status='konfirmasi'");
    if($ambil){
     $pecah = $ambil->fetch_assoc();
     $BOOL = true;
@@ -58,8 +58,9 @@ if (isset($_POST["kirim"]))
             <th>No</th>
             <th>Pelanggan</th>
             <th>Tanggal</th>
-            <th>Jumlah</th>
             <th>Status</th>
+            <th>Jumlah</th>
+            <th>Detail Transaksi</th>
         </tr>
     </thead>
     <tbody>
@@ -73,14 +74,18 @@ if (isset($_POST["kirim"]))
             <td><?php echo $key+1; ?></td>
             <td><?php echo $value["nama"] ?></td>
             <td><?php echo $value["tanggal_pembelian"] ?></td>
-            <td><?php echo number_format ($value["total_pembelian"]) ?></td>
             <td><?php echo $value["status"] ?></td>
+            <td><?php echo number_format ($value["total_pembelian"]) ?></td>
+            
+            <td>
+                <a href="detail.php?id=<?= $value['id_pembelian']?>">Detail</a>
+            </td>
         </tr>
         <?php endforeach ?>
     </tbody>
     <tfoot>
         <tr>
-            <th colspan="3">Total</th>
+            <th colspan="4">Total</th>
             <th> Rp. <?php echo number_format($total) ?></th>
             <th></th>
         </tr>

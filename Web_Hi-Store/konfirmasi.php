@@ -73,7 +73,7 @@ if (isset($_POST['save']))
     move_uploaded_file($lokasi, "bukti_pembayaran/".$nama);
     $koneksi->query("UPDATE pembelian SET bukti='$nama',status='proses' WHERE id_pembelian = $id");
     echo $koneksi->error;
-    echo "<script> alert('Tunggu Konfirmasi Dari Sistem'); </script>";
+    echo "<script> alert('Tunggu Konfirmasi Dari Admin'); </script>";
     echo "<script> location='home_customer.php'; </script>";
 }
 
