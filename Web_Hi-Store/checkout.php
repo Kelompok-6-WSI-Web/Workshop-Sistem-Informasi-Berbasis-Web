@@ -124,6 +124,7 @@ include "koneksi.php"
                     </select>
             </div>
             </div>
+            <p class="text-danger">jangan lupa untuk memilih ongkos kirim sesuai alamat anda sebelum submit</p>
            
             <br>
             <button type="submit" name="checkout" class="btn btn-primary">Submit</button>
