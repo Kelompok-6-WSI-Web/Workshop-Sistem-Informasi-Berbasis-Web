@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.1
+-- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 30, 2020 at 01:18 PM
--- Server version: 10.4.11-MariaDB
--- PHP Version: 7.4.3
+-- Generation Time: Jan 12, 2021 at 04:13 PM
+-- Server version: 10.4.14-MariaDB
+-- PHP Version: 7.4.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -40,8 +39,8 @@ CREATE TABLE `berita` (
 --
 
 INSERT INTO `berita` (`id_news`, `judul_news`, `deskripsi_news`, `banner_news`) VALUES
-(4, 'SALE HARI NATAL ', 'Dalam rangka memperingati Hari Raya Natal dan Akhir Tahun Hi-Store mengadakan sale besar-besaran sampai 50% untuk semua jenis sayuran yang ada di halaman shop. Sale dimulai dari tanggal 25 Desember- 02 Januari 2021 yuk buruan diborong jangan sampai kehabisan yahh !', 'banner1.jpg'),
-(5, 'HIDROPONIK 100% ORGANIK ', 'Sayur hidroponik merupakan sayuran sehat yang tidak ditanam di tanah. Alih-alih menggunakan tanah, air mineral digunakan sebagai media tanam. Makanya, tanaman sayur hidroponik bisa ditanam di area yang sempit sekalipun. Sayuran hidroponik juga biasanya lebih aman dari s erangan hama sehingga bebas pestisida.', 'banner2.jpg');
+(1, 'SALEEEEE', 'bismillah', ''),
+(2, 'promo', 'alhamdulillah', '');
 
 -- --------------------------------------------------------
 
@@ -89,7 +88,7 @@ INSERT INTO `kategori` (`id_kategori`, `nama_kategori`) VALUES
 
 CREATE TABLE `ongkir` (
   `id_ongkir` int(11) NOT NULL,
-  `nama_kecamatan` varchar(100) NOT NULL,
+  `nama_kecamatan` varchar(50) NOT NULL,
   `tarif` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -98,8 +97,34 @@ CREATE TABLE `ongkir` (
 --
 
 INSERT INTO `ongkir` (`id_ongkir`, `nama_kecamatan`, `tarif`) VALUES
-(1, 'Kalisat', 20000),
-(2, 'Sumbersari', 15000);
+(1, 'Kalisat', 40000),
+(2, 'Sumbersari', 15000),
+(3, 'Ambulu', 30000),
+(4, 'Arjasa', 20000),
+(5, 'Balung', 20000),
+(6, 'Bangsalsari', 30000),
+(7, 'Gumukmas', 30000),
+(8, 'Jelbuk', 35000),
+(9, 'Jenggawah', 20000),
+(10, 'Jombang', 20000),
+(11, 'Kaliwates', 10000),
+(12, 'Kencong', 40000),
+(13, 'Ledokombo', 30000),
+(14, 'Mayang', 40000),
+(15, 'Mumbulsari ', 40000),
+(16, 'Pakusari', 20000),
+(17, 'Panti', 15000),
+(18, 'Rambipuji', 8000),
+(19, 'Semboro', 20000),
+(20, 'Silo', 25000),
+(21, 'Sukorambi', 10000),
+(22, 'Sukowono', 30000),
+(23, 'Sumberbaru', 30000),
+(24, 'Sumberjambe', 30000),
+(25, 'Tanggul', 40000),
+(26, 'Tempurejo', 30000),
+(27, 'Umbulsari', 30000),
+(28, 'Wuluhan', 30000);
 
 -- --------------------------------------------------------
 
@@ -168,7 +193,25 @@ INSERT INTO `pembelian` (`id_pembelian`, `id_user`, `id_ongkir`, `tanggal_pembel
 (44, 2, 1, '2020-12-25', '65000', '0', NULL),
 (45, 2, 1, '2020-12-25', '60000', '0', NULL),
 (46, 2, 1, '2020-12-25', '115000', 'unnamed (2).jpg', 'proses'),
-(47, 5, 2, '2020-12-25', '35000', 'unnamed.jpg', 'proses');
+(47, 5, 2, '2020-12-25', '35000', 'unnamed.jpg', 'proses'),
+(48, 2, 1, '2020-12-25', '70000', '1.png', 'proses'),
+(49, 6, 2, '2020-12-25', '50000', '2.png', 'proses'),
+(50, 2, 1, '2020-12-27', '65000', '4.png', 'proses'),
+(51, 3, 1, '2020-12-29', '70000', '', NULL),
+(52, 2, 2, '2020-12-29', '65000', '', NULL),
+(53, 2, 2, '2020-12-29', '65000', '', NULL),
+(54, 2, 1, '2020-12-29', '90000', '', NULL),
+(55, 2, 1, '2020-12-29', '55000', '', NULL),
+(56, 2, 2, '2020-12-29', '70000', '', NULL),
+(57, 2, 1, '2020-12-29', '50000', '', NULL),
+(58, 2, 1, '2020-12-29', '55000', '', NULL),
+(59, 2, 1, '2020-12-29', '85000', '', NULL),
+(60, 2, 1, '2020-12-29', '70000', '', NULL),
+(61, 2, 2, '2020-12-29', '80000', '', NULL),
+(62, 2, 2, '2020-12-29', '70000', '', NULL),
+(63, 2, 2, '2020-12-29', '60000', '', NULL),
+(64, 2, 1, '2021-01-03', '70000', '1.png', 'proses'),
+(65, 2, 1, '2021-01-07', '55000', '4.png', 'proses');
 
 -- --------------------------------------------------------
 
@@ -255,7 +298,44 @@ INSERT INTO `pembelian_produk` (`id_pembelian_produk`, `id_pembelian`, `id_produ
 (64, 46, 1, '2', 45000),
 (65, 46, 8, '1', 45000),
 (66, 46, 6, '3', 45000),
-(67, 47, 1, '1', 20000);
+(67, 47, 1, '1', 20000),
+(68, 48, 1, '1', 30000),
+(69, 48, 6, '2', 30000),
+(70, 49, 6, '1', 20000),
+(71, 49, 1, '1', 20000),
+(72, 50, 6, '3', 45000),
+(73, 51, 1, '1', 30000),
+(74, 51, 6, '2', 30000),
+(75, 52, 1, '1', 30000),
+(76, 52, 6, '2', 30000),
+(77, 53, 1, '1', 30000),
+(78, 53, 6, '2', 30000),
+(79, 54, 1, '2', 30000),
+(80, 54, 6, '2', 30000),
+(81, 55, 6, '1', 20000),
+(82, 55, 8, '2', 20000),
+(83, 56, 1, '1', 20000),
+(84, 56, 6, '1', 20000),
+(85, 56, 8, '2', 20000),
+(86, 57, 1, '1', 10000),
+(87, 57, 8, '1', 10000),
+(88, 58, 1, '1', 15000),
+(89, 58, 6, '1', 15000),
+(90, 59, 1, '1', 15000),
+(91, 59, 6, '3', 15000),
+(92, 60, 1, '2', 0),
+(93, 60, 8, '1', 0),
+(94, 61, 1, '1', 0),
+(95, 61, 6, '3', 0),
+(96, 62, 1, '2', 0),
+(97, 62, 6, '1', 0),
+(98, 63, 1, '1', 20000),
+(99, 63, 6, '1', 15000),
+(100, 63, 8, '1', 10000),
+(101, 64, 1, '1', 20000),
+(102, 64, 6, '2', 30000),
+(103, 65, 1, '1', 20000),
+(104, 65, 6, '1', 15000);
 
 -- --------------------------------------------------------
 
@@ -278,10 +358,10 @@ CREATE TABLE `produk` (
 --
 
 INSERT INTO `produk` (`id_produk`, `id_jenis`, `nama_produk`, `harga_produk`, `berat_produk`, `foto_produk`, `deskripsi_produk`) VALUES
-(9, 0, 'Sawi', '10000', '100', 'sawi.jpg', 'Sawi Segar Fresh dari kebun hidroponik'),
-(10, 0, 'Pakcoy', '12000', '100', 'pakcoy.jpg', 'Sawi pakcoy khusus buat sayur cop, capjay dan lain-lain'),
-(11, 0, 'Kangkung', '10000', '100', 'kangkung.jpg', 'Kangkung fresh dari kebun'),
-(12, 0, 'Bayam', '15000', '100', 'bayam.jpg', 'Bayam Mantapp');
+(6, 0, 'Sawi', '15000', '1000', 'Sawi.jpg', 'sayur sawi murah berkualitas sangat baik'),
+(10, 0, 'Pakcoy', '12000', '1000', 'pakcoy.jpg', 'Hasil panen dari kebun hidroponik kami den...'),
+(11, 0, 'Kangkung', '10000', '1000', 'kangkung.jpg', 'Sayur murah hasil panen dari kebun hidropo...'),
+(12, 0, 'Sawi', '10000', '1000', 'Sawi.jpg', 'Sayur murah hasil panen dari kebun hidropo...');
 
 -- --------------------------------------------------------
 
@@ -308,7 +388,8 @@ INSERT INTO `users` (`id_user`, `id_kategori`, `email`, `nama`, `no_hp`, `alamat
 (2, 2, 'rian@gmail.com', 'rian admojo', '082333344555', 'jalan jalan', '123'),
 (3, 2, 'yayang@gmail.com', 'Yayang', '087123456789', 'jalan2', '1234'),
 (4, 2, 'sintanur096@gmail.com', 'sinta nuriyah wulandari', '085235138387', 'Winongan Pasuruan', '12345'),
-(5, 2, 'aku@gmail.com', 'Sayang', '085436243098', 'Perum Mastrip Blok ZZ', '333');
+(5, 2, 'aku@gmail.com', 'Sayang', '085436243098', 'Perum Mastrip Blok ZZ', '333'),
+(6, 2, 'tiyas@gmail.com', 'Nih Latuliah', '086543123456', 'Jalan Jawa', '5555');
 
 --
 -- Indexes for dumped tables
@@ -370,7 +451,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `berita`
 --
 ALTER TABLE `berita`
-  MODIFY `id_news` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id_news` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `jenis`
@@ -388,19 +469,19 @@ ALTER TABLE `kategori`
 -- AUTO_INCREMENT for table `ongkir`
 --
 ALTER TABLE `ongkir`
-  MODIFY `id_ongkir` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_ongkir` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
 -- AUTO_INCREMENT for table `pembelian`
 --
 ALTER TABLE `pembelian`
-  MODIFY `id_pembelian` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
+  MODIFY `id_pembelian` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=66;
 
 --
 -- AUTO_INCREMENT for table `pembelian_produk`
 --
 ALTER TABLE `pembelian_produk`
-  MODIFY `id_pembelian_produk` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=68;
+  MODIFY `id_pembelian_produk` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=105;
 
 --
 -- AUTO_INCREMENT for table `produk`
@@ -412,7 +493,7 @@ ALTER TABLE `produk`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
